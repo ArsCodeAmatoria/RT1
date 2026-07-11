@@ -42,6 +42,9 @@ export type HomeHeroContent = {
   description: string;
   primaryCta?: ContentCta;
   secondaryCta?: ContentCta;
+  /** Full-bleed hero background image (public path or absolute URL). */
+  image?: string;
+  imageAlt?: string;
 };
 
 export type HomeCtaContent = {

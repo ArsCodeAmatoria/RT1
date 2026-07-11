@@ -1,10 +1,11 @@
+import { Heading } from "@/components/design-system/heading";
+import { Text } from "@/components/design-system/text";
 import {
   Container,
   Section,
   SectionHeader,
 } from "@/components/library";
-import { IndustryCard } from "@/components/marketing/industries/industry-card";
-import { FadeIn } from "@/components/motion";
+import { Stagger, StaggerItem } from "@/components/motion";
 import type { ContentSectionHeader, IndustryItem } from "@/types";
 
 type IndustriesSectionProps = {
@@ -17,7 +18,6 @@ function IndustriesSection({ header, items }: IndustriesSectionProps) {
     <Section
       id="industries"
       density="spacious"
-      className="overflow-hidden"
       aria-labelledby="industries-heading"
     >
       <Container>
@@ -27,17 +27,35 @@ function IndustriesSection({ header, items }: IndustriesSectionProps) {
           title={header.title}
           description={header.description}
         />
-      </Container>
 
-      <FadeIn className="mt-14">
-        <div className="mx-auto w-full max-w-[var(--container-max)] px-4 sm:px-6 lg:px-8">
-          <div className="-mx-4 flex gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:thin] sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-            {items.map((industry) => (
-              <IndustryCard key={industry.title} {...industry} />
-            ))}
-          </div>
-        </div>
-      </FadeIn>
+        <Stagger
+          className="mt-10 grid border-t border-l border-border-subtle sm:grid-cols-2 lg:grid-cols-3"
+          role="list"
+          aria-label="Sectors"
+        >
+          {items.map((industry, index) => {
+            const number = String(index + 1).padStart(2, "0");
+
+            return (
+              <StaggerItem
+                key={industry.title}
+                role="listitem"
+                className="border-b border-r border-border-subtle p-6 md:p-7"
+              >
+                <span className="font-mono text-[0.65rem] tracking-[0.16em] text-foreground-muted">
+                  {number}
+                </span>
+                <Heading as="h3" size="h4" className="mt-4 text-xl sm:text-2xl">
+                  {industry.title}
+                </Heading>
+                <Text size="sm" className="mt-3 max-w-xs text-foreground-secondary">
+                  {industry.description}
+                </Text>
+              </StaggerItem>
+            );
+          })}
+        </Stagger>
+      </Container>
     </Section>
   );
 }

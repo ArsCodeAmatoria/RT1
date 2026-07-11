@@ -18,7 +18,13 @@ function HeroSection({ content }: HeroSectionProps) {
       primaryCta={content.primaryCta}
       secondaryCta={content.secondaryCta}
       scrollTarget="#services"
-      media={<HeroVideo className="absolute inset-0" />}
+      media={
+        <HeroVideo
+          className="absolute inset-0"
+          poster={content.image}
+          alt={content.imageAlt}
+        />
+      }
     />
   );
 }

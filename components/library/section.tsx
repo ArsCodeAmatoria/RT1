@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 const sectionVariants = cva("w-full", {
   variants: {
     density: {
-      compact: "py-16 md:py-20",
-      default: "py-24 md:py-32",
-      spacious: "py-28 md:py-36 lg:py-40",
+      compact: "py-10 md:py-12",
+      default: "py-14 md:py-18",
+      spacious: "py-16 md:py-20 lg:py-24",
     },
   },
   defaultVariants: {

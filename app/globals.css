@@ -99,8 +99,8 @@
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
-  --space-section: clamp(4rem, 8vw, 8rem);
-  --space-section-lg: clamp(5rem, 12vw, 10rem);
+  --space-section: clamp(2.5rem, 5vw, 5rem);
+  --space-section-lg: clamp(3rem, 6vw, 6rem);
 
   /* -------------------------------------------------------------------------- */
   /* Typography                                                                 */

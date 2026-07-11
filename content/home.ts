@@ -17,13 +17,15 @@ export const homePage: HomePageDocument = {
       "At Ridgetechone we are committed to empowering development and building a better future. Our multifaceted services cater to diverse construction needs, ensuring excellence at every step.",
     primaryCta: { label: "Contact us", href: routes.contact },
     secondaryCta: { label: "View services", href: routes.services },
+    image: "/images/hero.png",
+    imageAlt: "Tower crane illustration",
   },
   services: {
     header: {
-      eyebrow: "Our services",
-      title: "Built for diverse construction needs.",
+      eyebrow: "Capabilities",
+      title: "Disciplines that carry the build.",
       description:
-        "Concrete formwork · crane operations · rigging · rebar installation · project management · property development · equipment rental · training",
+        "Formwork, crane, reinforcing, and delivery — one standard of safety and craft across every phase.",
     },
   },
   stats: {
@@ -54,7 +56,7 @@ export const homePage: HomePageDocument = {
       eyebrow: "Sectors",
       title: "Where we build.",
       description:
-        "Commercial, multi-residential, institutional, healthcare, and education projects across the Lower Mainland.",
+        "Programs across the Lower Mainland — from towers and campuses to critical facilities.",
     },
     items: [
       {
