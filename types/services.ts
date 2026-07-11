@@ -27,6 +27,8 @@ export type ServiceStatus = "active" | "coming-soon";
 export interface ServiceListItem {
   title: string;
   description: string;
+  /** Optional per-item status (e.g. one course live, another soon). */
+  status?: ServiceStatus;
 }
 
 /**
@@ -56,18 +58,21 @@ export interface ServicePageContent {
 
   capabilities: {
     title: string;
+    eyebrow?: string;
     description?: string;
     items: ServiceListItem[];
   };
 
   technology: {
     title: string;
+    eyebrow?: string;
     description?: string;
     items: ServiceListItem[];
   };
 
   benefits: {
     title: string;
+    eyebrow?: string;
     description?: string;
     items: ServiceListItem[];
   };

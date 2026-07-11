@@ -33,10 +33,10 @@ function NavLink({ item, className, onNavigate, size = "desktop" }: NavLinkProps
     "relative rounded-md outline-none transition-colors duration-[var(--duration-base)] ease-[var(--ease-out-expo)]",
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     size === "desktop" &&
-      "px-1 py-2 text-[0.8125rem] font-medium tracking-wide text-foreground-secondary hover:text-foreground",
+      "font-display px-1 py-2 text-sm font-bold uppercase tracking-wide text-foreground hover:text-white",
     size === "mobile" &&
-      "font-display block w-full px-1 py-3 text-3xl font-semibold tracking-tight text-foreground",
-    active && "text-foreground",
+      "font-display block w-full px-1 py-3 text-3xl font-bold tracking-tight text-foreground",
+    active && "text-white",
     upcoming && "cursor-not-allowed text-foreground-muted",
     className,
   );

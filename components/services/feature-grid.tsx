@@ -1,3 +1,4 @@
+import { Badge } from "@/components/library/badge";
 import {
   Card,
   CardDescription,
@@ -26,16 +27,26 @@ function FeatureGrid({ items, className, columns = 2 }: FeatureGridProps) {
         className,
       )}
     >
-      {items.map((item) => (
-        <StaggerItem key={item.title}>
-          <Card className="h-full" padding="md">
-            <CardHeader>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
-            </CardHeader>
-          </Card>
-        </StaggerItem>
-      ))}
+      {items.map((item) => {
+        const comingSoon = item.status === "coming-soon";
+
+        return (
+          <StaggerItem key={item.title}>
+            <Card
+              className={cn("h-full", comingSoon && "opacity-90")}
+              padding="md"
+            >
+              <CardHeader>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <CardTitle>{item.title}</CardTitle>
+                  {comingSoon ? <Badge tone="primary">Coming Soon</Badge> : null}
+                </div>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          </StaggerItem>
+        );
+      })}
     </Stagger>
   );
 }

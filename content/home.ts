@@ -17,7 +17,7 @@ export const homePage: HomePageDocument = {
       "At Ridgetechone we are committed to empowering development and building a better future. Our multifaceted services cater to diverse construction needs, ensuring excellence at every step.",
     primaryCta: { label: "Contact us", href: routes.contact },
     secondaryCta: { label: "View services", href: routes.services },
-    image: "/images/hero.png",
+    image: "/images/hero2.png",
     imageAlt: "Tower crane illustration",
   },
   services: {

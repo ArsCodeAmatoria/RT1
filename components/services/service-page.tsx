@@ -89,7 +89,7 @@ function ServicePage({
         <Container>
           <SectionHeader
             titleId="capabilities-heading"
-            eyebrow="Capabilities"
+            eyebrow={service.capabilities.eyebrow ?? "Capabilities"}
             title={service.capabilities.title}
             description={service.capabilities.description}
           />
@@ -101,7 +101,7 @@ function ServicePage({
         <Container>
           <SectionHeader
             titleId="technology-heading"
-            eyebrow="Technology"
+            eyebrow={service.technology.eyebrow ?? "Technology"}
             title={service.technology.title}
             description={service.technology.description}
           />
@@ -118,7 +118,7 @@ function ServicePage({
         <Container>
           <SectionHeader
             titleId="benefits-heading"
-            eyebrow="Benefits"
+            eyebrow={service.benefits.eyebrow ?? "Benefits"}
             title={service.benefits.title}
             description={service.benefits.description}
           />

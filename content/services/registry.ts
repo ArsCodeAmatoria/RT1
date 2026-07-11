@@ -582,95 +582,129 @@ export const servicesRegistry: Record<ServiceSlug, ServicePageContent> = {
     slug: "training",
     title: "Training",
     summary:
-      "Field-ready training for crane operations, reinforcing, and construction excellence — launching soon.",
+      "Tower Crane School is running now. Tower Crane Rigging courses are coming soon.",
     icon: "graduation-cap",
     order: 7,
-    status: "coming-soon",
+    status: "active",
     hero: {
-      eyebrow: "Coming soon",
-      headline: "Training built for the field.",
+      eyebrow: "Training",
+      headline: "Tower crane training.",
       description:
-        "We’re building a training platform to develop skilled operators and crews — grounded in the same safety and craft standards that define Ridgetechone sites.",
-      primaryCta: { label: "Join the waitlist", href: contactHref },
+        "Crane School is underway. Rigging courses are coming soon — both built around tower crane operations and aligned to BC and industry standards.",
+      primaryCta: { label: "Enquire about Crane School", href: contactHref },
       secondaryCta: { label: "Our services", href: routes.services },
     },
     overview: {
       title: "Overview",
-      body: "Training extends our commitment to excellence beyond active jobsites. The platform will help crews build competence in crane operations, reinforcing practices, and site safety — taught by people who work the work.",
+      body: "Ridgetechone Training prepares crews for tower crane work with practitioner-led instruction aligned to BC Standards, WorkSafeBC, BC Crane Safety, ASME B30, EN, FEM, CSA, and related industry requirements — the same safety and craft expectations we bring to Metro Vancouver jobsites.",
       highlights: [
-        "Field-informed curriculum",
-        "Safety-first instruction",
-        "Operator and crew pathways",
+        "Tower Crane School — now open",
+        "Tower Crane Rigging — coming soon",
+        "BC & industry standards aligned",
       ],
     },
     capabilities: {
-      title: "Planned pathways",
+      eyebrow: "Courses",
+      title: "Tower crane pathways.",
+      description:
+        "Operator training is live. Rigging courses will follow.",
       items: [
         {
-          title: "Crane operations",
-          description: "Training aligned with real tower-crane site conditions.",
+          title: "Crane School",
+          description:
+            "Tower crane operator training aligned with real site conditions, safe lifting practice, and governing standards — currently running.",
+          status: "active",
         },
         {
-          title: "Reinforcing fundamentals",
-          description: "Quality and safety practices for ironwork crews.",
-        },
-        {
-          title: "Site safety",
-          description: "Protocols that protect teams, clients, and communities.",
-        },
-        {
-          title: "Supervisor development",
-          description: "Leadership skills for safer, more productive crews.",
+          title: "Rigging courses",
+          description:
+            "Tower crane rigging instruction for crews who prepare, signal, and support every lift — coming soon.",
+          status: "coming-soon",
         },
       ],
     },
     technology: {
-      title: "How we’ll teach",
+      eyebrow: "Standards",
+      title: "Trained to the codes that matter.",
+      description:
+        "Curriculum and practice reference the standards that govern tower crane work in British Columbia and beyond.",
       items: [
         {
-          title: "Practitioner-led",
-          description: "Instruction from experienced operators and supervisors.",
+          title: "BC Standards",
+          description:
+            "Provincial requirements and expectations for crane operations and training in British Columbia.",
         },
         {
-          title: "Practical scenarios",
-          description: "Learning tied to real Metro Vancouver site conditions.",
+          title: "WorkSafeBC",
+          description:
+            "Occupational health and safety requirements that protect workers around every lift.",
         },
         {
-          title: "Continuous improvement",
-          description: "Curriculum that evolves with methods and standards.",
+          title: "BC Crane Safety",
+          description:
+            "Provincial crane safety standards and competency expectations for operators and crews.",
+        },
+        {
+          title: "ASME B30",
+          description:
+            "Industry crane and lifting standards covering safe operation, inspection, and practice.",
+        },
+        {
+          title: "EN",
+          description:
+            "European Norm standards for crane design, operation, and safety practice.",
+        },
+        {
+          title: "FEM",
+          description:
+            "Fédération Européenne de la Manutention guidance for lifting equipment and crane performance.",
+        },
+        {
+          title: "CSA",
+          description:
+            "Canadian Standards Association requirements relevant to crane and lifting operations.",
+        },
+        {
+          title: "Related codes",
+          description:
+            "Additional manufacturer guidance and site protocols applied where they strengthen safe tower crane work.",
         },
       ],
     },
     benefits: {
-      title: "Benefits",
+      eyebrow: "Approach",
+      title: "How we teach.",
       items: [
         {
-          title: "Stronger crews",
-          description: "Skills that transfer directly to safer, better work.",
+          title: "Practitioner-led",
+          description:
+            "Instruction from experienced tower crane operators and supervisors.",
         },
         {
-          title: "Shared standards",
-          description: "Training that matches how Ridgetechone builds.",
+          title: "Practical scenarios",
+          description:
+            "Learning tied to real Metro Vancouver tower crane site conditions.",
         },
         {
-          title: "Career growth",
-          description: "Pathways for operators, ironworkers, and supervisors.",
+          title: "Standards-first",
+          description:
+            "Every pathway reinforced by BC Standards, WorkSafeBC, BC Crane Safety, ASME B30, EN, FEM, and CSA.",
         },
       ],
     },
     relatedProjectIds: [],
-    relatedServices: ["crane-rigging", "reinforcing", "equipment-rental"],
+    relatedServices: ["crane-rigging", "equipment-rental"],
     cta: {
-      eyebrow: "Early access",
-      headline: "Be first when Training launches.",
+      eyebrow: "Get started",
+      headline: "Ready for Crane School?",
       description:
-        "Tell us which roles and skills you need covered. We’ll notify you as the platform opens.",
+        "Enquire about current Tower Crane School intake, or join the list for Rigging courses when they open.",
       cta: { label: "Contact Ridgetechone", href: contactHref },
     },
     seo: {
-      title: "Training (Coming Soon)",
+      title: "Training",
       description:
-        "Upcoming field training for crane operations, reinforcing, and construction excellence from Ridgetechone.",
+        "Tower Crane School is open now. Rigging courses coming soon from Ridgetechone — aligned with BC Standards, WorkSafeBC, BC Crane Safety, ASME B30, EN, FEM, and CSA.",
     },
     extensions: {
       waitlistEnabled: true,

@@ -14,8 +14,7 @@ export const mainNavigation: NavItem[] = [
       {
         title: "Training",
         href: routes.training,
-        description: "Field training platform — launching soon",
-        upcoming: true,
+        description: "Tower Crane School open · Rigging courses coming soon",
       },
     ],
   },
