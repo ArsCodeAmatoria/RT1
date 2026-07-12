@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-/** App icon — `/icon` */
+/** App icon — `/icon` — bold R mark */
 export default function Icon() {
   return new ImageResponse(
     (
@@ -15,17 +15,24 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#090909",
-          borderRadius: 8,
+          borderRadius: 7,
         }}
       >
         <div
           style={{
-            width: 20,
-            height: 20,
-            borderRadius: 5,
-            background: "linear-gradient(135deg, #3B9EFF 0%, #7DD3FC 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: 22,
+            fontWeight: 700,
+            color: "#FFFFFF",
+            letterSpacing: "-0.06em",
+            lineHeight: 1,
+            fontFamily: "ui-sans-serif, system-ui, sans-serif",
           }}
-        />
+        >
+          R
+        </div>
       </div>
     ),
     { ...size },

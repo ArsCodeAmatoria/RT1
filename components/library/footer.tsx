@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -10,6 +11,7 @@ export interface FooterBrand {
   name: string;
   tagline?: string;
   logoSrc?: string;
+  logoAlt?: string;
 }
 
 export interface FooterProps {
@@ -27,7 +29,7 @@ export interface FooterProps {
 }
 
 /**
- * Minimal professional footer. All copy and links are prop-driven.
+ * Site footer — brand mark leads, links and contact follow.
  */
 function Footer({
   brand,
@@ -47,80 +49,114 @@ function Footer({
 
   return (
     <footer
-      className={cn("border-t border-border-subtle bg-background", className)}
+      className={cn(
+        "relative overflow-hidden border-t border-border-subtle",
+        className,
+      )}
       aria-labelledby="footer-heading"
     >
-      <Container className="py-16 md:py-20">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-sm">
-            <Link
-              href={brand.href}
-              className="inline-flex items-center rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <span
-                id="footer-heading"
-                className="font-display text-base font-bold tracking-tight text-foreground"
-              >
-                RIDGETECHONE
-              </span>
-            </Link>
+      <div className="texture-carbon absolute inset-0 opacity-70" aria-hidden />
+
+      <Container className="relative z-[1] py-16 md:py-20 lg:py-24">
+        <div className="grid gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-start lg:gap-20">
+          <div>
             {brand.tagline ? (
-              <p className="mt-5 text-sm leading-relaxed text-foreground-secondary">
+              <p className="max-w-md text-base leading-relaxed text-foreground-secondary sm:text-lg">
                 {brand.tagline}
               </p>
             ) : null}
-            {addressLines.length > 0 ? (
-              <p className="mt-4 text-sm leading-relaxed text-foreground-muted">
-                {addressLines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-              </p>
-            ) : null}
-            <div className="mt-4 flex flex-col gap-1 text-sm text-foreground-secondary">
-              {phone && phoneHref ? (
-                <a
-                  href={phoneHref}
-                  className="outline-none transition-rt hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {phone}
-                </a>
+
+            <div
+              className={cn(
+                "space-y-4",
+                brand.tagline ? "mt-6 border-t border-border-subtle pt-6" : null,
+              )}
+            >
+              {addressLines.length > 0 ? (
+                <p className="text-sm leading-relaxed text-foreground-muted">
+                  {addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </p>
               ) : null}
-              {email ? (
-                <a
-                  href={`mailto:${email}`}
-                  className="outline-none transition-rt hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {email}
-                </a>
+
+              <div className="flex flex-col gap-1.5 text-sm text-foreground-secondary sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-1">
+                {phone && phoneHref ? (
+                  <a
+                    href={phoneHref}
+                    className="outline-none transition-rt hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {phone}
+                  </a>
+                ) : null}
+                {email ? (
+                  <a
+                    href={`mailto:${email}`}
+                    className="outline-none transition-rt hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {email}
+                  </a>
+                ) : null}
+              </div>
+
+              {socialLinks.length > 0 ? (
+                <ul className="flex flex-wrap gap-5 pt-1">
+                  {socialLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-foreground-muted outline-none transition-rt hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               ) : null}
             </div>
-            {socialLinks.length > 0 ? (
-              <ul className="mt-5 flex flex-wrap gap-4">
-                {socialLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm text-foreground-secondary outline-none transition-rt hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+
+            <Link
+              href={brand.href}
+              className="group mt-8 block w-fit max-w-full rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              aria-label={`${brand.name} home`}
+            >
+              {brand.logoSrc ? (
+                <>
+                  <Image
+                    src={brand.logoSrc}
+                    alt={brand.logoAlt ?? brand.name}
+                    width={640}
+                    height={360}
+                    className="h-auto w-44 mix-blend-screen transition-opacity duration-300 group-hover:opacity-90 sm:w-52 lg:w-56"
+                    sizes="14rem"
+                    priority={false}
+                  />
+                  <span id="footer-heading" className="sr-only">
+                    {brand.name}
+                  </span>
+                </>
+              ) : (
+                <span
+                  id="footer-heading"
+                  className="font-display text-2xl font-bold tracking-tight text-foreground"
+                >
+                  RIDGETECHONE
+                </span>
+              )}
+            </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-14">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-12 lg:justify-items-start">
             {primaryLinks.length > 0 ? (
               <div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground-muted">
                   Navigate
                 </p>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-5 space-y-3">
                   {primaryLinks.map((item) => (
                     <li key={item.href ?? item.title}>
                       {item.disabled || !item.href ? (
@@ -146,7 +182,7 @@ function Footer({
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground-muted">
                   {section.title}
                 </p>
-                <ul className="mt-4 space-y-3">
+                <ul className="mt-5 space-y-3">
                   {section.items.map((item) => (
                     <li key={`${section.title}-${item.href ?? item.title}`}>
                       {item.disabled || item.upcoming || !item.href ? (
@@ -176,7 +212,7 @@ function Footer({
 
         {children}
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-border-subtle pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-4 border-t border-border-subtle pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-foreground-muted">
             © {year} {legalName}. All rights reserved.
           </p>

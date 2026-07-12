@@ -18,6 +18,8 @@ function SiteFooter() {
         href: routes.home,
         name: site.name,
         tagline: site.tagline,
+        logoSrc: "/images/logo.png",
+        logoAlt: "Ridgetechone",
       }}
       primaryLinks={getMainNavigation()
         .flatMap((item) => (item.children?.length ? item.children : [item]))
