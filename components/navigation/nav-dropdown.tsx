@@ -65,7 +65,7 @@ function NavDropdown({ item }: NavDropdownProps) {
         aria-controls={menuId}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "font-display inline-flex items-center gap-1.5 rounded-md px-1 py-2 text-sm font-bold uppercase tracking-wide outline-none transition-colors",
+          "font-display inline-flex h-10 items-center gap-1.5 rounded-md px-1 text-sm font-bold uppercase tracking-wide outline-none transition-colors",
           "text-foreground hover:text-white",
           "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
           parentActive && "text-white",

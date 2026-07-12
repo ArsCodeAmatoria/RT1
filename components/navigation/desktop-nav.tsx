@@ -16,9 +16,9 @@ function DesktopNav({ items, className }: DesktopNavProps) {
   return (
     <nav aria-label="Primary" className={cn("hidden lg:block", className)}>
       <LayoutGroup id="desktop-nav">
-        <ul className="flex items-center gap-8 xl:gap-10">
+        <ul className="flex h-10 items-center gap-8 xl:gap-10">
           {items.map((item) => (
-            <li key={item.title}>
+            <li key={item.title} className="flex h-full items-center">
               {item.children?.length ? (
                 <NavDropdown item={item} />
               ) : (

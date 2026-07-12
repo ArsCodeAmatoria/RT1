@@ -25,7 +25,7 @@ function NavLogo({ className, onNavigate }: NavLogoProps) {
       )}
       aria-label={`${SITE_NAME} home`}
     >
-      <span className="font-display text-base font-bold tracking-tight text-foreground sm:text-lg">
+      <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
         RIDGETECHONE
       </span>
     </Link>

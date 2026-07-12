@@ -57,13 +57,13 @@ function Navbar({
       >
         <div className="mx-auto w-full max-w-[var(--container-max)] px-4 sm:px-6 lg:px-8">
           <div className="grid h-[var(--header-height)] grid-cols-[1fr_auto] items-center gap-4 lg:grid-cols-[1fr_auto_1fr]">
-            <div className="justify-self-start">
+            <div className="flex items-center justify-self-start">
               <Link
                 href={brand.href}
-                className="group inline-flex items-center rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex h-10 items-center rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 aria-label={`${brand.label} home`}
               >
-                <span className="font-display text-base font-bold tracking-tight text-foreground sm:text-lg">
+                <span className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-[1.75rem]">
                   RIDGETECHONE
                 </span>
               </Link>
@@ -71,7 +71,7 @@ function Navbar({
 
             <DesktopNav items={items} className="justify-self-center" />
 
-            <div className="flex items-center justify-self-end gap-2">
+            <div className="flex h-10 items-center justify-self-end gap-2">
               {actions}
               <MobileNavTrigger
                 open={mobileOpen}
