@@ -21,7 +21,7 @@ function absoluteUrl(pathOrUrl: string) {
   return new URL(pathOrUrl, SITE_URL).toString();
 }
 
-export function organizationJsonLd(logoPath = "/icon"): JsonLdObject {
+export function organizationJsonLd(logoPath = "/icon.png"): JsonLdObject {
   const site = getSiteConfig();
   const sameAs = [site.links.linkedin, site.links.instagram].filter(
     (value): value is string => Boolean(value),
